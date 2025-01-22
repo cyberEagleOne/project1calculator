@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+
+<body>
+    <h1>Web Calculator</h1>
+    <div class="underline"></div> <!-- The black line under the header -->
+    <form method="POST">
+        <div class="box">
+            <input type="text" name="num1" placeholder="input number" value="{{ num1 }}" required>
+        </div>
+        <div class="operations">
+            <button type="submit" name="operation" value="Add">+</button>
+            <button type="submit" name="operation" value="Subtract">−</button>
+            <button type="submit" name="operation" value="Multiply">×</button>
+            <button type="submit" name="operation" value="Divide">÷</button>
+        </div>
+        <div class="box">
+            <input type="text" name="num2" placeholder="input number" value="{{ num2 }}" required>
+        </div>
+        <div class="box">
+            <button type="submit" name="operation" value="Clear">Clear</button>
+        </div>
+    </form>
+
+
+    {% if result is not none %}
+    <div class="result">Result: {{ result }}</div>
+    {% endif %}
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+</body>
+
+
+</html>
